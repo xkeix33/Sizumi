@@ -64,12 +64,12 @@ RUN apt update && apt upgrade -y && \
 # Pypi package Repo upgrade
 RUN pip3 install --upgrade pip setuptools
 
-# Copy Python Requirements to /root/RocksRobot
-RUN git clone -b shiken https://github.com/Ctzfamily/RocksRobot /root/RocksRobot
-WORKDIR /root/RocksRobot
+# Copy Python Requirements to /root/RocksAlexaRobot
+RUN git clone -b shiken https://github.com/Ctzfamily/RocksAlexaRobot /root/RocksAlexaRobot
+WORKDIR /root/RocksAlexaRobot
 
-#Copy config file to /root/RocksRobot/RocksRobot
-COPY ./RocksRobot/sample_config.py ./RocksRobot/config.py* /root/RocksRobot/RocksRobot/
+#Copy config file to /root/RocksAlexaRobot/RocksAlexaRobot
+COPY ./RocksAlexaRobot/sample_config.py ./RocksAlexaRobot/config.py* /root/RocksAlexaRobot/RocksAlexaRobot
 
 ENV PATH="/home/bot/bin:$PATH"
 
@@ -77,4 +77,4 @@ ENV PATH="/home/bot/bin:$PATH"
 RUN pip3 install -U -r requirements.txt
 
 # Starting Worker
-CMD ["python3","-m","RocksRobot"]
+CMD ["python3","-m","RocksAlexaRobot"]

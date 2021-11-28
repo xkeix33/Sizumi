@@ -1,4 +1,4 @@
 @echo off
-TITLE RocksRobot Chan
-:: Enables virtual env mode and then starts Vegeta
-env\scripts\activate.bat && py -m RocksRobot
+TITLE RocksAlexaRobot Chan
+:: Enables virtual env mode and then starts Alexa
+env\scripts\activate.bat && py -m RocksAlexaRobot
