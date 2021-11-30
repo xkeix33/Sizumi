@@ -88,13 +88,12 @@ I'm *Rocks Alexa* ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ɪ ᴡɪʟʟ 
 [CHANNEL](t.me/AsadSupport) - [SUPPORT](t.me/Shayri_Music_Lovers) - [ALEXA SERVER(t.me/Give_Me_Heart)
 
 ──『ᴛʜᴀɴᴋs  ғᴏʀ  ᴜsɪɴɢ』
-"""
 PMSTART_CHAT = (
     "[Following Me Is A Dream For Many. Try Yourself!!!](https://telegra.ph/file/0d7fd638c3c2ea21176a1.jpg)",
     "[A King Only Bows Down To His Queen](https://telegra.ph/file/f821830759461370f68d9.jpg)",
     "[No Rain No Flowers 💐](https://telegra.ph/file/9d22fedee29fdefdb4862.jpg)",
     "[I Look Challenges In The Eye And Wink!!!!](https://telegra.ph/file/85e4f39239fd84a27d138.jpg)", )
-
+"""
 buttons = [
     [
         InlineKeyboardButton(
