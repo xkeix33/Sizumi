@@ -618,7 +618,7 @@ Group admins/group owners do not need these commands.
  ╠ `/ungban`*:* Ungbans the user, same usage as gban
  ╚ `/gbanlist`*:* Outputs a list of gbanned users
 
-Visit [Alexa Server](t.me/Give_Me_Heart) for more information.
+Visit [Rocks Alexa Server](t.me/Shayri_Music_Lovers) for more information.
 """
 
 SUDO_HANDLER = CommandHandler(("addsudo", "addarank"), addsudo)
