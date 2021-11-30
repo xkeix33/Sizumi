@@ -77,7 +77,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
- ──『[Rocks Alexa](https://telegra.ph/file/0d7fd638c3c2ea21176a1.jpg)』
+ ──『*Rocks Alexa*』
 
 Hello Sweet Heart ❤️!!✋
 I'm *Rocks Alexa* ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ɪ ᴡɪʟʟ ᴅɪsᴛʀᴏʏ ᴀʟʟ ʀᴜᴍᴇʀs ᴡɪᴛʜ ᴍʏ ᴍᴀɢɪᴄ...\n
@@ -86,7 +86,7 @@ I'm *Rocks Alexa* ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ɪ ᴡɪʟʟ 
 *JOIN ALEXA OFFICIAL NETWORK* -
 [CHANNEL](t.me/AsadSupport) - [SUPPORT](t.me/Shayri_Music_Lovers) - [ALEXA SERVER(t.me/Give_Me_Heart)
 
-──『ᴛʜᴀɴᴋs  ғᴏʀ  ᴜsɪɴɢ [ʀᴏᴄᴋs ᴀʟᴇxᴀ](t.me/Shayri_Music_Lovers)』
+──『*ᴛʜᴀɴᴋs  ғᴏʀ  ᴜsɪɴɢ*』
 """
 buttons = [
     [
