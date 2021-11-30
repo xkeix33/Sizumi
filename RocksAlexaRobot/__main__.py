@@ -132,7 +132,7 @@ DONATE_STRING = """Contact to My Pretty [OWNER](t.me/Dr_Asad_Ali)"""
 HELP_IMG= "https://telegra.ph/file/93aa52512ccd256888b28.jpg"
 GROUPSTART_IMG= "https://telegra.ph/file/c71c9940f27143f1d6b7b.jpg"
 
-ROCKS_ALEXA = (
+ASAD = (
     "[Turn your wounds into wisdom!!!](https://telegra.ph/file/398464cf2d4fc012f2382.jpg)",
     "[I'm Asad Ali Project ❤️](https://telegra.ph/file/33c7b4cf335d3faa26648.jpg)",
     "[Get busy living or get busy dying 🔥](https://telegra.ph/file/e9b37121ced76940a312b.jpg)",
@@ -238,8 +238,8 @@ def start(update: Update, context: CallbackContext):
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
                 
             else:
-            update.effective_message.reply_sticker(
-                random.choice(ROCKS_ALEXA),
+            update.effective_message.reply_asad(
+                random.choice(ASAD),
                 timeout=60,
             )
             update.effective_message.reply_text(
