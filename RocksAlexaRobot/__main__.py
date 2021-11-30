@@ -132,13 +132,6 @@ DONATE_STRING = """Contact to My Pretty [OWNER](t.me/Dr_Asad_Ali)"""
 HELP_IMG= "https://telegra.ph/file/93aa52512ccd256888b28.jpg"
 GROUPSTART_IMG= "https://telegra.ph/file/c71c9940f27143f1d6b7b.jpg"
 
-ASAD = (
-    "[Turn your wounds into wisdom!!!](https://telegra.ph/file/398464cf2d4fc012f2382.jpg)",
-    "[I'm Asad Ali Project ❤️](https://telegra.ph/file/33c7b4cf335d3faa26648.jpg)",
-    "[Get busy living or get busy dying 🔥](https://telegra.ph/file/e9b37121ced76940a312b.jpg)",
-    "[Keep calm and carry on!!!!](https://telegra.ph/file/773e756def260814e5360.jpg)", )
-
-
 IMPORTED = {}
 MIGRATEABLE = []
 HELPABLE = {}
@@ -238,10 +231,6 @@ def start(update: Update, context: CallbackContext):
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
                 
             else:
-            update.effective_message.reply_asad(
-                random.choice(ASAD),
-                timeout=60,
-            )
             update.effective_message.reply_text(
                PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
@@ -258,8 +247,8 @@ def start(update: Update, context: CallbackContext):
         reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                  InlineKeyboardButton(text=" sᴜᴘᴘᴏʀᴛ ", url=f"https://telegram.dog/{SUPPORT_CHAT}"),
-                  InlineKeyboardButton(text=" ᴜᴘᴅᴀᴛᴇs ", url=f"t.me/AsadSupport"),
+                  InlineKeyboardButton(text="❤️ sᴜᴘᴘᴏʀᴛ ", url=f"https://telegram.dog/{SUPPORT_CHAT}"),
+                  InlineKeyboardButton(text=" ᴜᴘᴅᴀᴛᴇs 💖", url=f"t.me/AsadSupport"),
                   ]
                 ]
             ),
