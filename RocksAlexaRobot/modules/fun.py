@@ -22,23 +22,24 @@ from RocksAlexaRobot.modules.disable import DisableAbleCommandHandler, DisableAb
 from RocksAlexaRobot.modules.helper_funcs.alternate import typing_action
 from RocksAlexaRobot.modules.helper_funcs.extraction import extract_user
 
+GN_IMG= "https://telegra.ph/file/266e5e21d7f1325d72959.jpg"
 
 @run_async
 @typing_action
 def goodnight(update, context):
     message = update.effective_message
     first_name = update.effective_user.first_name
-    reply = f"Good Night! {escape_markdown(first_name)}"
-    message.reply_text(reply, parse_mode=ParseMode.MARKDOWN)
+    reply = f"*Hey {escape_markdown(first_name)} \nGood Night! 😴*"
+    message.reply_photo(GN_IMG,reply, parse_mode=ParseMode.MARKDOWN)
 
-
+GM_IMG= "https://telegra.ph/file/bfbf4cacc8c2df729ef5f.jpg"
 @run_async
 @typing_action
 def goodmorning(update, context):
     message = update.effective_message
     first_name = update.effective_user.first_name
-    reply = f"Good Morning! {escape_markdown(first_name)}"
-    message.reply_text(reply, parse_mode=ParseMode.MARKDOWN)
+    reply = f"*Hey {escape_markdown(first_name)} \n Good Morning!☀*"
+    message.reply_photo(GM_IMG,reply, parse_mode=ParseMode.MARKDOWN)
 
     
 @run_async
@@ -186,9 +187,3 @@ dispatcher.add_handler(DECIDE_HANDLER)
 dispatcher.add_handler(TRUTH_HANDLER)
 dispatcher.add_handler(REPO_HANDLER)
 dispatcher.add_handler(DARE_HANDLER)
-
-
-
-
-#guys this it you like pegasusXteam ask join @pegasusSupportofficial
-# © pegasusXteam
