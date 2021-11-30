@@ -76,8 +76,10 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
+
+
 PM_START_TEXT = """
- ──『*Rocks Alexa*』
+ ──『[Rocks Alexa](https://telegra.ph/file/0d7fd638c3c2ea21176a1.jpg)』
 
 Hello Sweet Heart ❤️!!✋
 I'm *Rocks Alexa* ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ɪ ᴡɪʟʟ ᴅɪsᴛʀᴏʏ ᴀʟʟ ʀᴜᴍᴇʀs ᴡɪᴛʜ ᴍʏ ᴍᴀɢɪᴄ...\n
@@ -86,8 +88,9 @@ I'm *Rocks Alexa* ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ɪ ᴡɪʟʟ 
 *JOIN ALEXA OFFICIAL NETWORK* -
 [CHANNEL](t.me/AsadSupport) - [SUPPORT](t.me/Shayri_Music_Lovers) - [ALEXA SERVER(t.me/Give_Me_Heart)
 
-──『*ᴛʜᴀɴᴋs  ғᴏʀ  ᴜsɪɴɢ*』
+──『ᴛʜᴀɴᴋs  ғᴏʀ  ᴜsɪɴɢ [ʀᴏᴄᴋs ᴀʟᴇxᴀ](t.me/Shayri_Music_Lovers)』
 """
+
 buttons = [
     [
         InlineKeyboardButton(
@@ -108,11 +111,6 @@ buttons = [
          ),
     ],
 ] 
-PMSTART_CHAT = (
-    "[Get busy living or get busy dying!!!](https://telegra.ph/file/398464cf2d4fc012f2382.jpg)",
-    "[I'm Asad Ali hope you are enjoying](https://telegra.ph/file/33c7b4cf335d3faa26648.jpg)",
-    "[Turn your wounds into wisdom 🔥](https://telegra.ph/file/e9b37121ced76940a312b.jpg)",
-    "[Keep calm and carry on!!!!](https://telegra.ph/file/773e756def260814e5360.jpg)", )
 
 HELP_STRINGS = """
 Hey there, I'm *Rᴏᴄᴋs Aʟᴇxᴀ*!
@@ -134,11 +132,11 @@ DONATE_STRING = """Contact to My Pretty [OWNER](t.me/Dr_Asad_Ali)"""
 HELP_IMG= "https://telegra.ph/file/93aa52512ccd256888b28.jpg"
 GROUPSTART_IMG= "https://telegra.ph/file/c71c9940f27143f1d6b7b.jpg"
 
-PM_IMG = ( "https://telegra.ph/file/5279239b590dcf832174c.jpg",
-           "https://telegra.ph/file/755b8409c6d113898e91d.jpg",
-           "https://telegra.ph/file/df227efa98620b04c06ba.jpg",
-           "https://telegra.ph/file/12a237defd3588f498e0f.jpg",
-           "https://telegra.ph/file/128a7a0bb2d00efabf24b.jpg", )
+ROCKS_ALEXA = (
+    "[Turn your wounds into wisdom!!!](https://telegra.ph/file/398464cf2d4fc012f2382.jpg)",
+    "[I'm Asad Ali Project ❤️](https://telegra.ph/file/33c7b4cf335d3faa26648.jpg)",
+    "[Get busy living or get busy dying 🔥](https://telegra.ph/file/e9b37121ced76940a312b.jpg)",
+    "[Keep calm and carry on!!!!](https://telegra.ph/file/773e756def260814e5360.jpg)", )
 
 
 IMPORTED = {}
@@ -240,14 +238,13 @@ def start(update: Update, context: CallbackContext):
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
                 
             else:
-            update.effective_message.reply_photo(
-               random.choice(PM_IMG),PM_START_TEXT,
-                reply_markup=InlineKeyboardMarkup(buttons),
-                parse_mode=ParseMode.MARKDOWN,
+            update.effective_message.reply_sticker(
+                random.choice(ROCKS_ALEXA),
                 timeout=60,
             )
             update.effective_message.reply_text(
-                random.choice(PMSTART_CHAT),
+               PM_START_TEXT,
+                reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
             )
