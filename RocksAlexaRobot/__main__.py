@@ -2,6 +2,7 @@ import importlib
 import random
 import time
 import re
+
 from sys import argv
 from typing import Optional
 
@@ -77,18 +78,15 @@ def get_readable_time(seconds: int) -> str:
 
 
 
-
 PM_START_TEXT = """
  ──『[Rocks Alexa](https://telegra.ph/file/0d7fd638c3c2ea21176a1.jpg)』
 
 Hello Sweet Heart ❤️!!✋
 I'm *Rocks Alexa* ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ɪ ᴡɪʟʟ ᴅɪsᴛʀᴏʏ ᴀʟʟ ʀᴜᴍᴇʀs ᴡɪᴛʜ ᴍʏ ᴍᴀɢɪᴄ...\n
-*SEE MY POWER - /help*
-
+*SEE MY POWER - /help*\n
 *JOIN ALEXA OFFICIAL NETWORK* -
-[CHANNEL](t.me/AsadSupport) - [SUPPORT](t.me/Shayri_Music_Lovers) - [ALEXA SERVER(t.me/Give_Me_Heart)
-
-──『ᴛʜᴀɴᴋs  ғᴏʀ  ᴜsɪɴɢ [ʀᴏᴄᴋs ᴀʟᴇxᴀ](t.me/Shayri_Music_Lovers)』
+[CHANNEL](t.me/AsadSupport) - [SUPPORT](t.me/Shayri_Music_Lovers) - [ALEXA SERVER(t.me/Give_Me_Heart)\n
+──『ᴛʜᴀɴᴋs  ғᴏʀ  ᴜsɪɴɢ [ʀᴏᴄᴋs ᴀʟᴇxᴀ]((t.me/Shayri_Music_Lovers)』
 """
 
 buttons = [
@@ -113,13 +111,13 @@ buttons = [
 ] 
 
 HELP_STRINGS = """
-Hey there, I'm *Rᴏᴄᴋs Aʟᴇxᴀ*!
+Hey there, I'm *Rocks Alexa*!
 To make me functional, make sure that i have enough rights in your group.
 Helpful commands:
 - /start: Starts me! You've probably already used this.
 - /help: Sends this message; I'll tell you more about myself!
 - /donate: Gives you info on how to support me and my creator.
-If you want to report bugs or have any questions on how to use me then feel free to reach out: @AsadSupport.
+If you want to report bugs or have any questions on how to use me then feel free to reach out: @rocksopfed.
 All commands can be used with the following: [Commands](https://telegra.ph/file/26be2672931c96bac0f06.jpg)
 List of all the Modules:
 """.format(
@@ -131,6 +129,13 @@ HELP_MSG = "Click the button below to get help manu in your pm."
 DONATE_STRING = """Contact to My Pretty [OWNER](t.me/Dr_Asad_Ali)"""
 HELP_IMG= "https://telegra.ph/file/93aa52512ccd256888b28.jpg"
 GROUPSTART_IMG= "https://telegra.ph/file/c71c9940f27143f1d6b7b.jpg"
+
+STICKERS = ( "CAACAgQAAxkBAAEDZOBhpqbSeM3f6mhtqfRfAAG_U4dxQTsAAlsMAAJ8ojlR438BMG9LOLYiBA",
+           "CAACAgQAAxkBAAEDZOJhpqbsab0POxKEYQNvwPlu_2bPKQACwQwAAk8EOFG8siNnLKnuzyIE",
+           "CAACAgQAAxkBAAEDZORhpqbvnlO3DDUdMjCqLAowjYfnYAADDAACtN45UcfFGUoBRU0RIgQ",
+           "CAACAgQAAxkBAAEDZOZhpqby4dhWPRsj3vXToZFp2VqxOAAC3A0AAsLVOFEelmEs0Gc_FiIE",
+           "CAACAgQAAxkBAAEDZOhhpqb0UdQAAQyg1PdbnZDBOLI2cDkAAvsJAAKJrTFRxlB80RZS9jEiBA", )
+           
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -214,7 +219,7 @@ def start(update: Update, context: CallbackContext):
                     update.effective_chat.id,
                     HELPABLE[mod].__help__,
                     InlineKeyboardMarkup(
-                        [[InlineKeyboardButton(text="⬅ʙᴀᴄᴋ", callback_data="help_back")]]
+                        [[InlineKeyboardButton(text="⬅Back", callback_data="help_back")]]
                     ),
                 )
 
@@ -229,8 +234,12 @@ def start(update: Update, context: CallbackContext):
 
             elif args[0][1:].isdigit() and "rules" in IMPORTED:
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
-                
-            else:
+
+        else:
+            update.effective_message.reply_sticker(
+                random.choice(STICKERS),
+                timeout=60,
+            )
             update.effective_message.reply_text(
                PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
@@ -247,11 +256,15 @@ def start(update: Update, context: CallbackContext):
         reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                  InlineKeyboardButton(text="❤️ sᴜᴘᴘᴏʀᴛ ", url=f"https://telegram.dog/{SUPPORT_CHAT}"),
-                  InlineKeyboardButton(text=" ᴜᴘᴅᴀᴛᴇs 💖", url=f"t.me/AsadSupport"),
-                  ]
-                ]
-            ),
+                  InlineKeyboardButton("❤️ ʜᴇᴀʀᴛ", url=f"https://t.me/Give_Me_Heart"),
+                    InlineKeyboardButton("👑 ᴏᴡɴᴇʀ", url=f"https://t.me/Dr_Asad_Ali"),
+                ],
+                [
+                    InlineKeyboardButton(
+                        "👨‍👨‍👧‍👦 ɢʀᴏᴜᴘ 👨‍👨‍👧‍👦", url=f"https://t.me/{SUPPORT_CHAT}"
+                    )
+                ],
+            ]
         )
 
 
@@ -382,7 +395,7 @@ def help_button(update, context):
 
 def alexa_data_callback(update, context):
     query = update.callback_query
-    if query.data == "_":
+    if query.data == "alexa_":
         query.message.edit_text(
             text="""CallBackQueriesData Here""",
             parse_mode=ParseMode.MARKDOWN,
@@ -390,7 +403,7 @@ def alexa_data_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="alexa_back")
+                    InlineKeyboardButton(text="Back", callback_data="alexa_back")
                  ]
                 ]
             ),
@@ -458,7 +471,7 @@ def get_help(update: Update, context: CallbackContext):
             chat.id,
             text,
             InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="help_back")]]
+                [[InlineKeyboardButton(text="Back", callback_data="help_back")]]
             ),
         )
 
@@ -531,7 +544,7 @@ def settings_button(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="ʙᴀᴄᴋ",
+                                text="Back",
                                 callback_data="stngs_back({})".format(chat_id),
                             )
                         ]
@@ -607,7 +620,7 @@ def get_settings(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="sᴇᴛᴛɪɴɢs",
+                                text="Settings",
                                 url="t.me/{}?start=stngs_{}".format(
                                     context.bot.username, chat.id
                                 ),
@@ -633,10 +646,10 @@ def donate(update: Update, context: CallbackContext):
             DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
         )
 
-        if OWNER_ID != 1342820594 and DONATION_LINK:
+        if OWNER_ID != 1610284626 and DONATION_LINK:
             update.effective_message.reply_text(
                 "You can also donate to the person currently running me "
-                "[❤️ ʜᴇʀᴇ ❤️]({})".format(DONATION_LINK),
+                "[here]({})".format(DONATION_LINK),
                 parse_mode=ParseMode.MARKDOWN,
             )
 
