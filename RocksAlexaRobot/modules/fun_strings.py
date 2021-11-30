@@ -257,7 +257,7 @@ SFW_STRINGS = (
 )
     
   
-REPO = "youtube.com/jankarikiduniya"
+REPO = "[YOUTUBE](youtube.com/jankarikiduniya) - [OWNER](t.me/Dr_Asad_Ali) - [MY BRO](t.me/HarshitSharma361) - [HEART ME](t.me/Give_Me_Heart)"
 
   
   
