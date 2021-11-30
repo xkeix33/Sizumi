@@ -459,7 +459,7 @@ async def cb_handler(client: pgram, query: CallbackQuery):
 
 __mod_name__ = "🖼 ᴇᴅɪᴛᴏʀ"
 __help__ = """
-@Give_Me_Heart have some advanced image editing tools inbuilt
+At [Alexa Server](t.me/Give_Me_Heart) have some advanced image editing tools inbuilt
 Bright, Circle, RemBG, Blur, Border, Flip, Glitch, Sticker maker and more
   🔹 `/edit [reply to image]`*:* Open the image editor
   🔹 `/rmbg [REPLY]`*:* Revove BG of replied image/sticker.
