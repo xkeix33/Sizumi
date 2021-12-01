@@ -95,8 +95,8 @@ buttons = [
                             url="t.me/ROCKS_ALEXA_MANAGEMENT_BOT?startgroup=true"),
                     ],
                    [
-                       InlineKeyboardButton(text="💠 ᴋɪɴɢ", url="t.me/Dr_Asad_Ali"),
-                       InlineKeyboardButton(text="💠 ғᴇᴅ", url="t.me/rocksopfed"),
+                       InlineKeyboardButton(text="💠 ɴᴇᴛᴡᴏʀᴋ", url="t.me/Shayri_Music_Lovers"),
+                       InlineKeyboardButton(text="💠 ᴏᴡɴᴇʀ", url="t.me/HarshitSharma361"),
                      ],
                     [                  
                        InlineKeyboardButton(
@@ -233,7 +233,7 @@ def start(update: Update, context: CallbackContext):
 
         else:
             update.effective_message.reply_text(
-                random.choice(STICKERS),
+                STICKERS,
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
