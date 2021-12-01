@@ -77,26 +77,30 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-
-STICKERS = """
- ──『[Rocks Alexa](https://telegra.ph/file/0d7fd638c3c2ea21176a1.jpg)』
+@Client.on_message(command("start") & filters.private & ~filters.edited)
+async def start_(client: Client, message: Message):
+    await message.reply_photo(
+        photo=f"https://telegra.ph/file/0d7fd638c3c2ea21176a1.jpg",
+        caption=f"""
+ ──『*Rocks Alexa*』
 
 Hey Sweet Heart ❤️!!✋
 I'm *Rocks Alexa* ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ɪ ᴡɪʟʟ ᴅɪsᴛʀᴏʏ ᴀʟʟ ʀᴜᴍᴇʀs ᴡɪᴛʜ ᴍʏ ᴍᴀɢɪᴄ...\n
 *JOIN ALEXA OFFICIAL NETWORK* -
 [CHANNEL](t.me/AsadSupport) - [SUPPORT](t.me/Shayri_Music_Lovers) - [ALEXA SERVER(t.me/Give_Me_Heart)\n
-──『*ᴛʜᴀɴᴋs  ғᴏʀ  ᴜsɪɴɢ*』
-"""
-
-buttons = [
-    [
-        InlineKeyboardButton(
+💞 ᴛʜᴀɴᴋꜱ ꜰᴏʀ  
+ᴜꜱɪɴɢ [ʀᴏᴄᴋs ᴍᴜsɪᴄ](t.me/ROCKS_ALEXA_MANAGEMENT_BOT).\nᴍʏ [ᴅᴇᴠᴇʟᴏᴘᴇʀ](t.me/Dr_Asad_Ali) ᴍʏ [sᴜᴘᴘᴏʀᴛᴇʀ](t.me/HarshitSharma361)\n
+**""",
+    reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
                             text="💠 ᴀᴅᴅ ᴀʟᴇxᴀ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ 💠",
                             url="t.me/ROCKS_ALEXA_MANAGEMENT_BOT?startgroup=true"),
                     ],
                    [
-                       InlineKeyboardButton(text="💠 ɴᴇᴛᴡᴏʀᴋ", url="t.me/Shayri_Music_Lovers"),
-                       InlineKeyboardButton(text="💠 ᴏᴡɴᴇʀ", url="t.me/HarshitSharma361"),
+                       InlineKeyboardButton(text="💠 ᴋɪɴɢ", url="t.me/Dr_Asad_Ali"),
+                       InlineKeyboardButton(text="💠 ғᴇᴅ", url="t.me/rocksopfed"),
                      ],
                     [                  
                        InlineKeyboardButton(
@@ -110,8 +114,8 @@ buttons = [
                            InlineKeyboardButton(text="💠 ᴍʏ ᴘᴏᴡᴇʀ 💠", callback_data="help_back"
          ),
     ],
-] 
-
+]
+        
 HELP_STRINGS = """
 Hey there, I'm *Rocks Alexa*!
 To make me functional, make sure that i have enough rights in your group.
@@ -230,14 +234,7 @@ def start(update: Update, context: CallbackContext):
 
             elif args[0][1:].isdigit() and "rules" in IMPORTED:
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
-
-        else:
-            update.effective_message.reply_text(
-                random.choice(STICKERS),
-                reply_markup=InlineKeyboardMarkup(buttons),
-                parse_mode=ParseMode.MARKDOWN,
-                timeout=60,
-            )
+        
     else:
         first_name = update.effective_user.first_name
         update.effective_message.reply_video(
@@ -395,14 +392,6 @@ def alexa_data_callback(update, context):
                  ]
                 ]
             ),
-        )
-    elif query.data == "alexa_back":
-        query.message.edit_text(
-                PM_START_TEXT,
-                reply_markup=InlineKeyboardMarkup(buttons),
-                parse_mode=ParseMode.MARKDOWN,
-                timeout=60,
-                disable_web_page_preview=False,
         )
 
 
