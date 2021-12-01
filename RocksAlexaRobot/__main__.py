@@ -132,12 +132,6 @@ DONATE_STRING = """Contact to My Pretty [OWNER](t.me/Dr_Asad_Ali)"""
 HELP_IMG= "https://telegra.ph/file/93aa52512ccd256888b28.jpg"
 GROUPSTART_IMG= "https://telegra.ph/file/c71c9940f27143f1d6b7b.jpg"
 
-STICKERS = ( "CAACAgQAAxkBAAEDZOBhpqbSeM3f6mhtqfRfAAG_U4dxQTsAAlsMAAJ8ojlR438BMG9LOLYiBA",
-           "CAACAgQAAxkBAAEDZOJhpqbsab0POxKEYQNvwPlu_2bPKQACwQwAAk8EOFG8siNnLKnuzyIE",
-           "CAACAgQAAxkBAAEDZORhpqbvnlO3DDUdMjCqLAowjYfnYAADDAACtN45UcfFGUoBRU0RIgQ",
-           "CAACAgQAAxkBAAEDZOZhpqby4dhWPRsj3vXToZFp2VqxOAAC3A0AAsLVOFEelmEs0Gc_FiIE",
-           "CAACAgQAAxkBAAEDZOhhpqb0UdQAAQyg1PdbnZDBOLI2cDkAAvsJAAKJrTFRxlB80RZS9jEiBA", )
-           
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -238,10 +232,6 @@ def start(update: Update, context: CallbackContext):
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
 
         else:
-            update.effective_message.reply_sticker(
-                random.choice(STICKERS),
-                timeout=60,
-            )
             update.effective_message.reply_text(
                PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
