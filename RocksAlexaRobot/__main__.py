@@ -78,7 +78,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 
-PM_START_TEXT = """
+STICKERS = """
  ──『[Rocks Alexa](https://telegra.ph/file/0d7fd638c3c2ea21176a1.jpg)』
 
 Hey Sweet Heart ❤️!!✋
@@ -130,7 +130,7 @@ List of all the Modules:
 HELP_MSG = "Click the button below to get help manu in your pm."
 DONATE_STRING = """Contact to My Pretty [OWNER](t.me/Dr_Asad_Ali)"""
 HELP_IMG= "https://telegra.ph/file/93aa52512ccd256888b28.jpg"
-GROUPSTART_IMG= "https://telegra.ph/file/c71c9940f27143f1d6b7b.jpg"
+GROUPSTART_IMG= "https://telegra.ph/file/35e730dea457c85cc367b.mp4"
 
 
 IMPORTED = {}
@@ -233,7 +233,7 @@ def start(update: Update, context: CallbackContext):
 
         else:
             update.effective_message.reply_text(
-               PM_START_TEXT,
+                random.choice(STICKERS),
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
