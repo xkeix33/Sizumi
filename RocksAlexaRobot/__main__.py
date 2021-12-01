@@ -79,46 +79,48 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
- ──『[Rocks Alexa](https://telegra.ph/file/0d7fd638c3c2ea21176a1.jpg)』
+ ──『[SAIYAN VEGETA](https://telegra.ph/file/561fa547f3c4940c95ddf.jpg)』
 
-Hello Sweet Heart ❤️!!✋\n
-I'm *Rocks Alexa* ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ɪ ᴡɪʟʟ ᴅɪsᴛʀᴏʏ ᴀʟʟ ʀᴜᴍᴇʀs ᴡɪᴛʜ ᴍʏ ᴍᴀɢɪᴄ...\n
-*SEE MY POWER - /help*\n
-*JOIN ALEXA OFFICIAL NETWORK* -
-[CHANNEL](t.me/AsadSupport) - [SUPPORT](t.me/Shayri_Music_Lovers) - [ALEXA SERVER(t.me/Give_Me_Heart)\n
-──『ᴛʜᴀɴᴋs  ғᴏʀ  ᴜsɪɴɢ ʀᴏᴄᴋs ᴀʟᴇxᴀ』
+Hey User!!✋
+𝐈 Am *Prince Vegeta* Add 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩 𝐈 𝐖𝐢𝐥𝐥 𝐃𝐞𝐬𝐭𝐫𝐨𝐲 𝐄𝐯𝐢𝐥𝐬 𝐖𝐢𝐭𝐡 𝐌𝐲 Powers...\n
+*JOIN OFFICIAL* -
+[CHANNEL](t.me/pegasusUpdates) - [SUPPORT](t.me/pegasusSupportChat)\n
+──『*ᴛʜᴀɴᴋs  ғᴏʀ  ᴜsɪɴɢ*』
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-                            text="💠 ᴀᴅᴅ ᴀʟᴇxᴀ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ 💠",
-                            url="t.me/ROCKS_ALEXA_MANAGEMENT_BOT?startgroup=true"),
+                            text="☑ Add Vegeta to Group ☑",
+                            url="t.me/VegetaRobot?startgroup=true"),
                     ],
                    [
-                       InlineKeyboardButton(text="💠 ᴋɪɴɢ", url="t.me/Dr_Asad_Ali"),
-                       InlineKeyboardButton(text="💠 ғᴇᴅ", url="t.me/rocksopfed"),
+                       InlineKeyboardButton(text="✧ Network", url="t.me/pegasusXteam"),
+                       InlineKeyboardButton(text="✧ Logs", url="t.me/pegasusLogs"),
                      ],
                     [                  
                        InlineKeyboardButton(
-                             text="💠 sᴜᴘᴘᴏʀᴛ",
+                             text="✧ Support",
                              url=f"https://t.me/{SUPPORT_CHAT}"),
                        InlineKeyboardButton(
-                             text="💠 ᴜᴘᴅᴀᴛᴇs",
-                             url=f"https://t.me/AsadSupport"
+                             text="✧ Updates",
+                             url=f"https://t.me/{UPDATES_CHANNEL}"),
+                        ],
+                       [
+                           InlineKeyboardButton(text="✧ MY POWERS ✧", callback_data="help_back"
          ),
     ],
 ] 
 
 HELP_STRINGS = """
-Hey there, I'm *Rocks Alexa*!
+Hey there, I'm *Vegeta*!
 To make me functional, make sure that i have enough rights in your group.
 Helpful commands:
 - /start: Starts me! You've probably already used this.
 - /help: Sends this message; I'll tell you more about myself!
 - /donate: Gives you info on how to support me and my creator.
-If you want to report bugs or have any questions on how to use me then feel free to reach out: @rocksopfed.
-All commands can be used with the following: [Commands](https://telegra.ph/file/26be2672931c96bac0f06.jpg)
+If you want to report bugs or have any questions on how to use me then feel free to reach out: *@VegetaSupport.*
+All commands can be used with the following: *(/),(!),(?),(.),(~)*
 List of all the Modules:
 """.format(
     dispatcher.bot.first_name,
@@ -126,15 +128,14 @@ List of all the Modules:
 )
 
 HELP_MSG = "Click the button below to get help manu in your pm."
-DONATE_STRING = """Contact to My Pretty [OWNER](t.me/Dr_Asad_Ali)"""
-HELP_IMG= "https://telegra.ph/file/93aa52512ccd256888b28.jpg"
-GROUPSTART_IMG= "https://telegra.ph/file/c71c9940f27143f1d6b7b.jpg"
+DONATE_STRING = """Contact to **@PegasusXrobot**"""
+HELP_IMG= "https://telegra.ph/file/9d2c6e3b28afe7619856e.jpg"
+GROUPSTART_IMG= "https://telegra.ph/file/1cbafa58dda18528f9e0c.mp4"
 
-STICKERS = ( "CAACAgQAAxkBAAEDZOBhpqbSeM3f6mhtqfRfAAG_U4dxQTsAAlsMAAJ8ojlR438BMG9LOLYiBA",
-           "CAACAgQAAxkBAAEDZOJhpqbsab0POxKEYQNvwPlu_2bPKQACwQwAAk8EOFG8siNnLKnuzyIE",
-           "CAACAgQAAxkBAAEDZORhpqbvnlO3DDUdMjCqLAowjYfnYAADDAACtN45UcfFGUoBRU0RIgQ",
-           "CAACAgQAAxkBAAEDZOZhpqby4dhWPRsj3vXToZFp2VqxOAAC3A0AAsLVOFEelmEs0Gc_FiIE",
-           "CAACAgQAAxkBAAEDZOhhpqb0UdQAAQyg1PdbnZDBOLI2cDkAAvsJAAKJrTFRxlB80RZS9jEiBA", )
+STICKERS = ( "CAACAgUAAx0CXss_8QABAjzEYaXnOPwfLA22Dea6kU6EvrELQWgAAmoEAAIYaChVcBl8nrGetAIiBA",
+           "CAACAgUAAx0CXss_8QABAjzFYaXnObthrCpGkPRRNr471UrxAxsAAgEEAAKqVjBVdLdGaDAs3noiBA",
+           "CAACAgUAAx0CXss_8QABAjzGYaXnOosVqi4RBeMSLVvty53Q_UgAAhMEAAJqlClV9scsuWjjA60iBA",
+           "CAACAgUAAx0CXss_8QABAjzHYaXnOlfNEo15FunXUy0O9RuSc_AAAs4EAALPrzFV_rrVm8aMDyYiBA", )
            
 
 IMPORTED = {}
@@ -249,22 +250,18 @@ def start(update: Update, context: CallbackContext):
     else:
         first_name = update.effective_user.first_name
         update.effective_message.reply_video(
-            GROUPSTART_IMG, caption= "*hey {},*\n*Rocks Alexa here*\n*Power lavel time* : {} ".format(
+            GROUPSTART_IMG, caption= "*hey {},*\n*Super Saiyan here*\n*Power lavel time* : {} ".format(
              first_name,uptime
             ),
             parse_mode=ParseMode.MARKDOWN,
         reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                  InlineKeyboardButton("❤️ ʜᴇᴀʀᴛ", url=f"https://t.me/Give_Me_Heart"),
-                    InlineKeyboardButton("👑 ᴏᴡɴᴇʀ", url=f"https://t.me/Dr_Asad_Ali"),
-                ],
-                [
-                    InlineKeyboardButton(
-                        "👨‍👨‍👧‍👦 ɢʀᴏᴜᴘ 👨‍👨‍👧‍👦", url=f"https://t.me/{SUPPORT_CHAT}"
-                    )
-                ],
-            ]
+                  InlineKeyboardButton(text="✧ Support ", url=f"https://telegram.dog/{SUPPORT_CHAT}"),
+                  InlineKeyboardButton(text="✧ Updates ", url=f"t.me/VegetaUpdates"),
+                  ]
+                ]
+            ),
         )
 
 
@@ -340,7 +337,7 @@ def help_button(update, context):
         if mod_match:
             module = mod_match.group(1)
             text = (
-                "Powered by [Dr Asad Ali](t.me/Dr_Asad_Ali) And [Harshit Sharma](t.me/HarshitSharma361)\nHere is the help for the *{}* module:\n".format(
+                "Powered by @UnitedSupport\nHere is the help for the *{}* module:\n".format(
                     HELPABLE[module].__mod_name__
                 )
                 + HELPABLE[module].__help__
@@ -350,8 +347,8 @@ def help_button(update, context):
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text="⬅ ʙᴀᴄᴋ", callback_data="help_back"),
-                      InlineKeyboardButton(text="⬅ ʜᴏᴍᴇ", callback_data="alexa_back")]]
+                    [[InlineKeyboardButton(text="⬅ Back", callback_data="help_back"),
+                      InlineKeyboardButton(text="⬅ Home", callback_data="vegeta_back")]]
                 ),
             )
 
@@ -393,9 +390,9 @@ def help_button(update, context):
 
 
 
-def alexa_data_callback(update, context):
+def vegeta_data_callback(update, context):
     query = update.callback_query
-    if query.data == "alexa_":
+    if query.data == "vegeta_":
         query.message.edit_text(
             text="""CallBackQueriesData Here""",
             parse_mode=ParseMode.MARKDOWN,
@@ -403,12 +400,12 @@ def alexa_data_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Back", callback_data="alexa_back")
+                    InlineKeyboardButton(text="Back", callback_data="vegeta_back")
                  ]
                 ]
             ),
         )
-    elif query.data == "alexa_back":
+    elif query.data == "vegeta_back":
         query.message.edit_text(
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
@@ -696,7 +693,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}","[ROCKS ALEXA IS BACK](https://telegra.ph/file/8d2bf852a53bd13fb8037.jpg)", parse_mode=ParseMode.MARKDOWN) 
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}","[SUPER SAIYAN VEGETA IS BACK](https://telegra.ph/file/d3db0babad0d1729c5f59.jpg)", parse_mode=ParseMode.MARKDOWN) 
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!",
@@ -713,7 +710,7 @@ def main():
     settings_handler = CommandHandler("settings", get_settings)
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
 
-    data_callback_handler = CallbackQueryHandler(alexa_data_callback, pattern=r"alexa_")
+    data_callback_handler = CallbackQueryHandler(vegeta_data_callback, pattern=r"vegeta_")
     donate_handler = CommandHandler("donate", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
 
@@ -739,7 +736,7 @@ def main():
             updater.bot.set_webhook(url=URL + TOKEN)
 
     else:
-        LOGGER.info("Rocks Alexa is now alive and functioning")
+        LOGGER.info("Vegeta is now alive and functioning")
         updater.start_polling(timeout=15, read_latency=4, clean=True)
 
     if len(argv) not in (1, 3, 4):
