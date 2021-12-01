@@ -146,7 +146,7 @@ def del_fed(update: Update, context: CallbackContext):
         .format(getinfo['fname']),
         reply_markup=InlineKeyboardMarkup([[
             InlineKeyboardButton(
-                text=""⚠️ Delete Federation "⚠️",
+                text="⚠️ Delete Federation ⚠️",
                 callback_data="rmfed_{}".format(fed_id))
         ], [InlineKeyboardButton(text="Cancel",
                                  callback_data="rmfed_cancel")]]))
