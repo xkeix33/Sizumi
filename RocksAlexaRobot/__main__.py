@@ -20,7 +20,6 @@ from RocksAlexaRobot import (
     dispatcher,
     StartTime,
     telethn,
-    pbot,
     updater,
 )
 
