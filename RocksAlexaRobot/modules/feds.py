@@ -2075,8 +2075,26 @@ def get_chat(chat_id, chat_data):
 
 
 @run_async
+def fed_owner_help(update: 
+def fed_admin_help(update: Update, context: CallbackContext):
+    update.effective_message.reply_text(
+        """*🔱 Fed Admins:*
+ • `/fban <user> <reason>`*:* Fed bans a user
+ • `/unfban <user> <reason>`*:* Removes a user from a fed ban
+ • `/fedinfo <fed_id>`*:* Information about the specified Federation
+ • `/joinfed <fed_id>`*:* Join the current chat to the Federation. Only chat owners can do this. Every chat can only be in one Federation
+ • `/leavefed <fed_id>`*:* Leave the Federation given. Only chat owners can do this
+ • `/setfrules <rules>`*:* Arrange Federation rules
+ • `/fedadmins`*:* Show Federation admin
+ • `/fbanlist`*:* Displays all users who are victimized at the Federation at this time
+ • `/fedchats`*:* Get all the chats that are connected in the Federation
+ • `/chatfed `*:* See the Federation in the current chat\n""",
+        parse_mode=ParseMode.MARKDOWN)
+		  
+@run_async
 def fed_owner_help(update: Update, context: CallbackContext):
-    """*👑 Fed Owner Only:*
+    update.effective_message.reply_text(
+        """*👑 Fed Owner Only:*
  • `/newfed <fed_name>`*:* Creates a Federation, One allowed per user
  • `/renamefed <fed_id> <new_fed_name>`*:* Renames the fed id to a new name
  • `/delfed <fed_id>`*:* Delete a Federation, and any information related to it. Will not cancel blocked users
@@ -2089,7 +2107,6 @@ def fed_owner_help(update: Update, context: CallbackContext):
  • `/fbroadcast <message>`*:* Broadcasts a messages to all groups that have joined your fed
  • `/fedsubs`*:* Shows the feds your group is subscribed to `(broken rn)`""",
         parse_mode=ParseMode.MARKDOWN)
-
 
 
 @run_async
@@ -2117,9 +2134,7 @@ def fed_user_help(update: Update, context: CallbackContext):
  • `/fednotif <on/off>`*:* Federation settings not in PM when there are users who are fbaned/unfbanned
  • `/frules`*:* See Federation regulations\n""",
         parse_mode=ParseMode.MARKDOWN)
-
-
-
+		   
 __mod_name__ = "💀 ғᴇᴅs"
 
 __help__ = """
