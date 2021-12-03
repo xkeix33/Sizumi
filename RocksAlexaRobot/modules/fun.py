@@ -22,7 +22,7 @@ from RocksAlexaRobot.modules.disable import DisableAbleCommandHandler, DisableAb
 from RocksAlexaRobot.modules.helper_funcs.alternate import typing_action
 from RocksAlexaRobot.modules.helper_funcs.extraction import extract_user
 
-GN_IMG= "https://telegra.ph/file/266e5e21d7f1325d72959.jpg"
+GN_IMG= "https://telegra.ph/file/b74c13c9c6999abadb136.jpg"
 
 @run_async
 @typing_action
