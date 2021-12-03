@@ -5,7 +5,6 @@
 # Owner Asad + Harshit
 # Roses are red, Violets are blue, A face like yours, Belongs in a zoo
 
-
 import html
 import random
 import re
@@ -22,7 +21,8 @@ from RocksAlexaRobot.modules.disable import DisableAbleCommandHandler, DisableAb
 from RocksAlexaRobot.modules.helper_funcs.alternate import typing_action
 from RocksAlexaRobot.modules.helper_funcs.extraction import extract_user
 
-GN_IMG= "https://telegra.ph/file/b74c13c9c6999abadb136.jpg"
+GN_IMG= "https://telegra.ph/file/f67bb5f05e5b0a0d3288c.jpg"
+DECIDE_IMG= "https://telegra.ph/file/313cfbc4056bd3b5cd995.jpg"
 
 @run_async
 @typing_action
@@ -32,7 +32,7 @@ def goodnight(update, context):
     reply = f"*Hey {escape_markdown(first_name)} \nGood Night! 😴*"
     message.reply_photo(GN_IMG,reply, parse_mode=ParseMode.MARKDOWN)
 
-GM_IMG= "https://telegra.ph/file/bfbf4cacc8c2df729ef5f.jpg"
+GM_IMG= "https://telegra.ph/file/97c03a0eb3dbb0056a753.jpg"
 @run_async
 @typing_action
 def goodmorning(update, context):
@@ -82,16 +82,16 @@ def gbam(update, context):
         
         
 @run_async
+@typing_action
 def decide(update: Update, context: CallbackContext):
     reply_text = update.effective_message.reply_to_message.reply_text if update.effective_message.reply_to_message else update.effective_message.reply_text
-    reply_text(random.choice(fun.DECIDE))
-    
+    reply_text(DECIDE_IMG,random.choice(fun.DECIDE,parse_mode=ParseMode.MARKDOWN))
 
 @run_async
 @typing_action
 def repo(update, context):
     update.effective_message.reply_text(fun.REPO)
- 
+  
 @run_async
 def insult(update, context):
     context.bot.sendChatAction(update.effective_chat.id, "typing") # Bot typing before send messages
@@ -161,11 +161,15 @@ def pat(update: Update, context: CallbackContext):
         temp = random.choice(fun.PAT_TEMPLATES)
         reply = temp.format(user1=user1, user2=user2)
         reply_to.reply_text(reply, parse_mode=ParseMode.HTML)
-                                                                         
+                                                                     
+            
+            
+
     
 GOODMORNING_HANDLER = DisableAbleMessageHandler(Filters.regex(r"(?i)(goodmorning|good morning)"), goodmorning, friendly="goodmorning")
 GOODNIGHT_HANDLER = DisableAbleMessageHandler(Filters.regex(r"(?i)(goodnight|good night)"), goodnight, friendly="goodnight")
 DECIDE_HANDLER = DisableAbleCommandHandler("decide", decide)
+
 REPO_HANDLER = DisableAbleCommandHandler("repo", repo)
 
 GBUN_HANDLER = CommandHandler("gbun", gbun)
@@ -184,6 +188,7 @@ dispatcher.add_handler(GBAM_HANDLER)
 dispatcher.add_handler(GBUN_HANDLER)
 dispatcher.add_handler(PAT_HANDLER)
 dispatcher.add_handler(DECIDE_HANDLER)
+
 dispatcher.add_handler(TRUTH_HANDLER)
 dispatcher.add_handler(REPO_HANDLER)
 dispatcher.add_handler(DARE_HANDLER)
