@@ -42,6 +42,12 @@ GBAM_REASON = (
 
 DECIDE = ("Yes.", "Maybe.", "No.")
 
+WISH = (
+    "*hey! (first)*\n*your Wish Possible to 25%😟*",
+    "*hey! (first)*\n*your Wish Possible to 50%🤔*",
+    "*hey! (first)*\n*your Wish Possible to 75%😉*",
+    "*hey! (first)*\n*your Wish Possible to 100%😍*" )
+
 ABUSE_STRINGS = (
     "Fuck off",
     "Stfu go fuck yourself",
@@ -272,8 +278,3 @@ REPO = """━━━━━━━━━━━━━━━━━━━━━━━�
 
 💞 
 IF HAVE ANY QUESTION OR WANT REPO THEN CONTACT » TO » MY » [OWNER] @Dr_Asad_Ali)"""
-
-
-  
-  
-    
