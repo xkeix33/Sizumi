@@ -40,7 +40,7 @@ GBAM_REASON = (
     "mater girls",
 )
 
-DECIDE = ("Yes.", "Maybe.", "No.")
+DECIDE_HANDLER = ("Yes.", "Maybe.", "No.")
 
 WISH = (
     "*hey! (first)*\n*your Wish Possible to 25%😟*",
