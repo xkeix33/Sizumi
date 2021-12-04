@@ -233,9 +233,9 @@ def info(update: Update, context: CallbackContext):
         return
 
     rep = message.reply_text(
-        "<code>Connecting to pegasus</code>", parse_mode=ParseMode.HTML)
+        "<code>Connecting To Alexa Server</code>", parse_mode=ParseMode.HTML)
 
-    text = (f"╒═══「<b> Rocks Alexa DB Userinfo:</b> 」\n"
+    text = (f"╒═══「<b> Userinfo At Alexa Server :</b> 」\n"
             f"ID: <code>{user.id}</code>\n"
             f"First Name: {html.escape(user.first_name)}")
 
