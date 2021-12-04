@@ -23,6 +23,7 @@ from RocksAlexaRobot.modules.helper_funcs.extraction import extract_user
 
 GN_IMG= "https://telegra.ph/file/f67bb5f05e5b0a0d3288c.jpg"
 DECIDE_IMG= "https://telegra.ph/file/313cfbc4056bd3b5cd995.jpg"
+JUDGE_IMG= "https://telegra.ph/file/a2ebfdd262def30ad42a7.jpg"
 
 @run_async
 @typing_action
@@ -79,13 +80,21 @@ def gbam(update, context):
         reason = random.choice(fun.GBAM_REASON)
         gbam = gbamm.format(user1=user1, user2=user2, chatid=chat.id, reason=reason)
         context.bot.sendMessage(chat.id, gbam, parse_mode=ParseMode.HTML)
-        
-        
+
+    
+    
 @run_async
 @typing_action
-def decide(update: Update, context: CallbackContext):
-    reply_text = update.effective_message.reply_to_message.reply_text if update.effective_message.reply_to_message else update.effective_message.reply_text
-    reply_text(DECIDE_IMG,random.choice(fun.DECIDE_HANDLER))
+def judge(update, context):
+    update.effective_message.reply_text(JUDGE_IMG,random.choice(fun.JUDGE_HANDLER))
+
+
+
+@run_async
+@typing_action
+def decide(update, context):
+    update.effective_message.reply_text(DECIDE_IMG,random.choice(fun.DECIDE_HANDLER))
+
 
 @run_async
 @typing_action
@@ -179,6 +188,7 @@ DARE_HANDLER = DisableAbleCommandHandler("dare", dare)
 TRUTH_HANDLER = DisableAbleCommandHandler("truth", truth)
 INSULT_HANDLER = DisableAbleCommandHandler("insult", insult)
 ABUSE_HANDLER = DisableAbleCommandHandler("abuse", abuse)
+JUDGE_HANDLER = DisableAbleCommandHandler("judge", abuse)
 
 dispatcher.add_handler(GOODMORNING_HANDLER)
 dispatcher.add_handler(GOODNIGHT_HANDLER)
@@ -188,6 +198,7 @@ dispatcher.add_handler(GBAM_HANDLER)
 dispatcher.add_handler(GBUN_HANDLER)
 dispatcher.add_handler(PAT_HANDLER)
 dispatcher.add_handler(DECIDE_HANDLER)
+dispatcher.add_handler(JUDGE_HANDLER)
 
 dispatcher.add_handler(TRUTH_HANDLER)
 dispatcher.add_handler(REPO_HANDLER)
