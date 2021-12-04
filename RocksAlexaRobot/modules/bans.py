@@ -5,7 +5,6 @@
 
 
 
-
 import html
 
 from telegram import (
@@ -47,6 +46,8 @@ from RocksAlexaRobot.modules.helper_funcs.extraction import extract_user_and_tex
 from RocksAlexaRobot.modules.helper_funcs.string_handling import extract_time
 from RocksAlexaRobot.modules.log_channel import gloggable, loggable
 
+UNBAN_IMG= "https://telegra.ph/file/b017dc397c6895a201170.mp4"
+BAN_IMG= "https://telegra.ph/file/8feebcd2309655661e0c9.mp4"
 
 @run_async
 @connection_status
@@ -132,21 +133,18 @@ def ban(update: Update, context: CallbackContext) -> str:
         if reason:
             reply += f"\n<code> </code><b>• Reason:</b> \n{html.escape(reason)}"
 
-        bot.sendMessage(
-            chat.id,
-            reply,
+        bot.send_video(
+            chat.id, BAN_IMG,caption=reply,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(
-                            text="❕Unban", callback_data=f"unbanb_unban={user_id}"
-                        ),
-                        InlineKeyboardButton(text="❌ Delete", callback_data="unbanb_del"),
+       InlineKeyboardButton(text="❕Unban", callback_data=f"unbanb_unban={user_id}"),
+       InlineKeyboardButton(text="❌ Delete", callback_data="unbanb_del"),
                     ]
                 ]
             ),
             parse_mode=ParseMode.HTML,
-        )
+            )
         return log
 
     except BadRequest as excp:
@@ -154,7 +152,7 @@ def ban(update: Update, context: CallbackContext) -> str:
             # Do not reply
             if silent:
                 return log
-            message.reply_text("Banned!", quote=False)
+            message.reply_text("Baka is Banned!", quote=False)
             return log
         else:
             LOGGER.warning(update)
@@ -171,7 +169,6 @@ def ban(update: Update, context: CallbackContext) -> str:
 
 
 @run_async
-
 @connection_status
 @bot_admin
 @can_restrict
@@ -315,7 +312,12 @@ def unbanb_btn(update: Update, context: CallbackContext) -> str:
             except BadRequest:
                 pass
             chat.unban_member(user_id)
-            query.message.edit_text("Yep, this user can join!")
+            query.message.delete()
+            bot.send_video(
+            chat.id,
+            UNBAN_IMG, caption= f"❕UnBan Event• \n👮Admin: {mention_html(user.id, user.first_name)} \n👥UnbanUser: {mention_html(member.user.id, member.user.first_name)}!",
+        	    parse_mode=ParseMode.HTML,
+        	)
             bot.answer_callback_query(query.id, text="Unbanned!")
             return (
                 f"<b>{html.escape(chat.title)}:</b>\n"
@@ -556,5 +558,3 @@ __handlers__ = [
     ROAR_HANDLER,
     PUNCHME_HANDLER,
 ]
-
-# Roses are red, Violets are blue, A face like yours, Belongs in a zoo
