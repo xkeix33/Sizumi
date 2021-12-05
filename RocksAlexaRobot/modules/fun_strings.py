@@ -22,7 +22,7 @@ JUDGE_HANDLER = (
 
 DECIDE_STRINGS= ("First 𝗧𝗮𝗴 A User 𝗤𝘂𝗲𝘀𝘁𝗶𝗼𝗻 You Noob 𝗜𝘁𝘁𝘂 🤏 Sey 😂")
 
-JUDGE_STRINGS= ("<b>First<b> 𝗧𝗮𝗴 A User 𝗦𝘁𝗮𝘁𝗲𝗺𝗲𝗻𝘁 You Noob 𝗜𝘁𝘁𝘂 🤏 Sey 😂")
+JUDGE_STRINGS= ("First 𝗧𝗮𝗴 A User 𝗦𝘁𝗮𝘁𝗲𝗺𝗲𝗻𝘁 You Noob 𝗜𝘁𝘁𝘂 🤏 Sey 😂")
 
 GBAM = "<b>Beginning Of Global Bam For {user2}</b>  \n \nChat Id : <code>{chatid}</code> \nReason : <i>{reason}</i> \nGBammed By {user1}"
  
