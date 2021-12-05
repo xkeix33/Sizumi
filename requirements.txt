@@ -1,4 +1,4 @@
-fture
+future
 faker
 motor
 PyDictionary==2.0.1
