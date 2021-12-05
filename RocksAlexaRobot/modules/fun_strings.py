@@ -17,7 +17,7 @@ GBUN = (
 JUDGE_HANDLER = (
     "𝗦𝗮𝗱!\nThis user is telling a 𝗟𝗶𝗲 😟",
     "𝗦𝗼𝗿𝗿𝘆!\nno comment on this 𝘀𝘁𝗮𝘁𝗲𝗺𝗲𝗻𝘁 🤔",
-    "𝗛𝗲𝗛𝗲!\n**This user is telling the 𝗜𝘁𝘁𝘂 🤏 sa 𝘁𝗿𝘂𝘁𝗵 😉",
+    "𝗛𝗲𝗛𝗲!\nThis user is telling the 𝗜𝘁𝘁𝘂 🤏 sa 𝘁𝗿𝘂𝘁𝗵 😉",
     "𝗪𝗼𝗪!\nThis user is telling the 𝘁𝗿𝘂𝘁𝗵 😍" )
 
 DECIDE_STRINGS= ("First 𝗧𝗮𝗴 A User 𝗤𝘂𝗲𝘀𝘁𝗶𝗼𝗻 You Noob 𝗜𝘁𝘁𝘂 🤏 Sey 😂")
