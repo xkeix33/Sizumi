@@ -103,7 +103,7 @@ buttons = [
                     ],
                    [
                        InlineKeyboardButton(text="💠 ᴋɪɴɢ", url="t.me/Dr_Asad_Ali"),
-                       InlineKeyboardButton(text="💠 ғᴇᴅ", url="t.me/rocksopfed"),
+                       InlineKeyboardButton(text="💠 ғᴇᴅ", url="t.me/rockslogchannel"),
                      ],
                     [                  
                        InlineKeyboardButton(
