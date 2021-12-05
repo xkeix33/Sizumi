@@ -86,14 +86,14 @@ def gbam(update, context):
 @run_async
 @typing_action
 def judge(update, context):
-    update.effective_message.reply_text(JUDGE_IMG,random.choice(fun.JUDGE_HANDLER))
+    update.effective_message.reply_text(random.choice(fun.JUDGE_HANDLER)
 
 
 
 @run_async
 @typing_action
 def decide(update, context):
-    update.effective_message.reply_text(DECIDE_IMG,random.choice(fun.DECIDE_HANDLER))
+    update.effective_message.reply_text(random.choice(fun.DECIDE_HANDLER))
 
 
 @run_async
