@@ -24,6 +24,8 @@ from RocksAlexaRobot.modules.helper_funcs.extraction import extract_user
 GN_IMG= "https://telegra.ph/file/f67bb5f05e5b0a0d3288c.jpg"
 DECIDE_IMG= "https://telegra.ph/file/313cfbc4056bd3b5cd995.jpg"
 JUDGE_IMG= "https://telegra.ph/file/a2ebfdd262def30ad42a7.jpg"
+DECIDE_STRINGS= "**Tag A User First You Noob Ittu 🤏 Sey 😂**"
+JUDGE_STRINGS= "**Tag A User First You Noob Ittu 🤏 Sey 😂**"
 
 @run_async
 @typing_action
@@ -84,17 +86,23 @@ def gbam(update, context):
     
     
 @run_async
-@typing_action
 def judge(update, context):
-    update.effective_message.reply_text(random.choice(fun.JUDGE_HANDLER))
-
+    context.bot.sendChatAction(update.effective_chat.id, "typing") # Bot typing before send messages
+    message = update.effective_message
+    if message.reply_to_message:
+      message.reply_to_message.reply_text(random.choice(fun.JUDGE_HANDLER))
+    else:
+      message.reply_text(random.choice(fun.JUDGE_STRINGS)) 
 
 
 @run_async
-@typing_action
 def decide(update, context):
-    update.effective_message.reply_text(random.choice(fun.DECIDE_HANDLER))
-
+    context.bot.sendChatAction(update.effective_chat.id, "typing") # Bot typing before send messages
+    message = update.effective_message
+    if message.reply_to_message:
+      message.reply_to_message.reply_text(random.choice(fun.DECIDE_HANDLER))
+    else:
+      message.reply_text(random.choice(fun.DECIDE_STRINGS)) 
 
 @run_async
 @typing_action
@@ -177,6 +185,7 @@ def pat(update: Update, context: CallbackContext):
     
 GOODMORNING_HANDLER = DisableAbleMessageHandler(Filters.regex(r"(?i)(goodmorning|good morning)"), goodmorning, friendly="goodmorning")
 GOODNIGHT_HANDLER = DisableAbleMessageHandler(Filters.regex(r"(?i)(goodnight|good night)"), goodnight, friendly="goodnight")
+DECIDE_HANDLER = DisableAbleCommandHandler("decide", decide)
 
 REPO_HANDLER = DisableAbleCommandHandler("repo", repo)
 
