@@ -18,4 +18,4 @@ venv
 env
 RocksAlexaRobot.session-journal
 updates.txt
-*.exe
+*.ex
