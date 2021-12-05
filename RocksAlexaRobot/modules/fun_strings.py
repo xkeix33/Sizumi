@@ -20,6 +20,10 @@ JUDGE_HANDLER = (
     "𝗛𝗲𝗛𝗲!\n**This user is telling the 𝗜𝘁𝘁𝘂 🤏 sa 𝘁𝗿𝘂𝘁𝗵 😉",
     "𝗪𝗼𝗪!\nThis user is telling the 𝘁𝗿𝘂𝘁𝗵 😍" )
 
+DECIDE_STRINGS= ("𝗧𝗮𝗴 A User First You Noob 𝗜𝘁𝘁𝘂 🤏 Sey 😂")
+
+JUDGE_STRINGS= ("𝗧𝗮𝗴 A User <b>First<b> You Noob 𝗜𝘁𝘁𝘂 🤏 Sey 😂")
+
 GBAM = "<b>Beginning Of Global Bam For {user2}</b>  \n \nChat Id : <code>{chatid}</code> \nReason : <i>{reason}</i> \nGBammed By {user1}"
  
 # These words for just for fun don't mind it
