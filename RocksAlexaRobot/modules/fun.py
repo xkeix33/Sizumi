@@ -24,8 +24,7 @@ from RocksAlexaRobot.modules.helper_funcs.extraction import extract_user
 GN_IMG= "https://telegra.ph/file/f67bb5f05e5b0a0d3288c.jpg"
 DECIDE_IMG= "https://telegra.ph/file/313cfbc4056bd3b5cd995.jpg"
 JUDGE_IMG= "https://telegra.ph/file/a2ebfdd262def30ad42a7.jpg"
-DECIDE_STRINGS= "**Tag A User First You Noob Ittu 🤏 Sey 😂**"
-JUDGE_STRINGS= "**Tag A User First You Noob Ittu 🤏 Sey 😂**"
+
 
 @run_async
 @typing_action
