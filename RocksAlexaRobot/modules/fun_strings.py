@@ -14,6 +14,11 @@ GBUN = (
     "Nah, He Looks Innocent...",
 )
 
+JUDGE_HANDLER = (
+    "*Sad! (first)*\n*is telling a lie 😟*",
+    "*Sorry! {escape_markdown(first_name)}*\n*no comment on this statement 🤔*",
+    "*HeHe! {escape_markdown(first_name)}*\n* is telling the Ittu 🤏 sa truth😉*",
+    "*WoW! {escape_markdown(first_name)}*\n* is telling the truth 😍*" )
 
 GBAM = "<b>Beginning Of Global Bam For {user2}</b>  \n \nChat Id : <code>{chatid}</code> \nReason : <i>{reason}</i> \nGBammed By {user1}"
 
@@ -40,7 +45,7 @@ GBAM_REASON = (
     "mater girls",
 )
 
-DECIDE_HANDLER = ("Yes.", "Maybe.", "No.")
+DECIDE_HANDLER = ("Yes.", "Ittu 🤏 Sa.", "No.")
 
 WISH = (
     "*hey! (first)*\n*your Wish Possible to 25%😟*",
