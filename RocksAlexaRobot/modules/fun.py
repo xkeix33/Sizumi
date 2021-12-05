@@ -91,7 +91,7 @@ def judge(update, context):
     if message.reply_to_message:
       message.reply_to_message.reply_text(random.choice(fun.JUDGE_HANDLER))
     else:
-      message.reply_text(fun.JUDGE_STRINGS))
+      message.reply_text(fun.JUDGE_STRINGS)
 
 
 @run_async
