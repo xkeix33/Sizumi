@@ -309,6 +309,48 @@ SLAP_TEMPLATES = (
     "Goblin slayer slays {user2}",  #Goblin Slayer
 )
 
+ITEMS = (
+    "cast iron skillet",
+    "angry meow",
+    "cricket bat",
+    "wooden cane",
+    "shovel",
+    "toaster",
+    "book",
+    "laptop",
+    "rubber chicken",
+    "spiked bat",
+    "heavy rock",
+    "chunk of dirt",
+    "ton of bricks",
+    "rasengan",
+    "spirit bomb",
+    "100-Type Guanyin Bodhisattva",
+    "rasenshuriken",
+    "Murasame",
+    "ban",
+    "chunchunmaru",
+    "Kubikiribōchō",
+    "rasengan",
+    "spherical flying kat",
+)
+
+THROW = (
+    "throws",
+    "flings",
+    "chucks",
+    "hurls",
+)
+
+HIT = (
+    "hits",
+    "whacks",
+    "slaps",
+    "smacks",
+    "bashes",
+    "pats",
+)
+
 PAT_GIFS = (
     "CgACAgQAAxkBAALRX19Xs7tBdOH1gQwS_rglVRkTbgVYAAKEAgACmQn9UWlyGa_xy9_aGwQ",
     "CgACAgEAAxkBAALRYF9Xs8EnhsDfDpld3ILoqTbzDmwxAAJFAAOJxjlHECanwn69E5QbBA", 
