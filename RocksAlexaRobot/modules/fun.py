@@ -246,7 +246,19 @@ def pat(update: Update, context: CallbackContext):
         reply_to.reply_text(reply, parse_mode=ParseMode.HTML)
                                                                      
             
-            
+ __help__ = """
+ • `/repo`*:* get repo of Alexa bot
+ • `/judge`*:* to judge someone argument
+ • `/decide*:* get bot Decession on statement
+ • `/insult`*:* to insult someone
+ • `/slap`*:* to slap a user or bot
+ • `/abuse`*:* to abuse someone
+ • `/dare`*:* play truth and dare game with friends
+ • `/truth`*:* play truth and dare game with friends
+ • `/alexa`*:* to start alexa
+ • `/pat`*:* to get pat
+ • `/gbun`*:* fack ban of users.
+ """
 
     
 GOODMORNING_HANDLER = DisableAbleMessageHandler(Filters.regex(r"(?i)(goodmorning|good morning)"), goodmorning, friendly="goodmorning")
