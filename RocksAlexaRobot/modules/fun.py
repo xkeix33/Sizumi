@@ -127,6 +127,62 @@ def abuse(update, context):
     else:
       message.reply_text(random.choice(fun.ABUSE_STRINGS))
 
+    
+@run_async
+def slap(update: Update, context: CallbackContext):
+    bot, args = context.bot, context.args
+    message = update.effective_message
+    chat = update.effective_chat
+
+    reply_text = message.reply_to_message.reply_text if message.reply_to_message else message.reply_text
+
+    curr_user = html.escape(message.from_user.first_name)
+    user_id = extract_user(message, args)
+
+    if user_id == bot.id:
+        temp = random.choice(fun_strings.SLAP_ALEXA_TEMPLATES)
+
+        if isinstance(temp, list):
+            if temp[2] == "tmute":
+                if is_user_admin(chat, message.from_user.id):
+                    reply_text(temp[1])
+                    return
+
+                mutetime = int(time.time() + 60)
+                bot.restrict_chat_member(
+                    chat.id,
+                    message.from_user.id,
+                    until_date=mutetime,
+                    permissions=ChatPermissions(can_send_messages=False))
+            reply_text(temp[0])
+        else:
+            reply_text(temp)
+        return
+
+    if user_id:
+
+        slapped_user = bot.get_chat(user_id)
+        user1 = curr_user
+        user2 = html.escape(slapped_user.first_name)
+
+    else:
+        user1 = bot.first_name
+        user2 = curr_user
+
+    temp = random.choice(fun_strings.SLAP_TEMPLATES)
+    item = random.choice(fun_strings.ITEMS)
+    hit = random.choice(fun_strings.HIT)
+    throw = random.choice(fun_strings.THROW)
+
+    if update.effective_user.id == 1342820594:
+        temp = "@AsadSupport scratches {user2}"
+
+    reply = temp.format(
+        user1=user1, user2=user2, item=item, hits=hit, throws=throw)
+
+    reply_text(reply, parse_mode=ParseMode.HTML)   
+    
+    
 @run_async
 @typing_action
 def truth(update, context):
@@ -197,6 +253,7 @@ INSULT_HANDLER = DisableAbleCommandHandler("insult", insult)
 ABUSE_HANDLER = DisableAbleCommandHandler("abuse", abuse)
 JUDGE_HANDLER = DisableAbleCommandHandler("judge", judge)
 DECIDE_HANDLER = DisableAbleCommandHandler("decide", decide)
+SLAP_HANDLER = DisableAbleCommandHandler("slap", slap)
 
 dispatcher.add_handler(GOODMORNING_HANDLER)
 dispatcher.add_handler(GOODNIGHT_HANDLER)
@@ -207,6 +264,7 @@ dispatcher.add_handler(GBUN_HANDLER)
 dispatcher.add_handler(PAT_HANDLER)
 dispatcher.add_handler(DECIDE_HANDLER)
 dispatcher.add_handler(JUDGE_HANDLER)
+dispatcher.add_handler(SLAP_HANDLER)
 
 dispatcher.add_handler(TRUTH_HANDLER)
 dispatcher.add_handler(REPO_HANDLER)
