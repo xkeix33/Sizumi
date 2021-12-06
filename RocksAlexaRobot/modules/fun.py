@@ -19,6 +19,7 @@ import RocksAlexaRobot.modules.fun_strings as fun
 from RocksAlexaRobot import DEMONS, DRAGONS, dispatcher
 from RocksAlexaRobot.modules.disable import DisableAbleCommandHandler, DisableAbleMessageHandler
 from RocksAlexaRobot.modules.helper_funcs.alternate import typing_action
+from RocksAlexaRobot.modules.helper_funcs.chat_status import (is_user_admin)
 from RocksAlexaRobot.modules.helper_funcs.extraction import extract_user
 
 GN_IMG= "https://telegra.ph/file/f67bb5f05e5b0a0d3288c.jpg"
