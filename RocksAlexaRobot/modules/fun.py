@@ -93,6 +93,16 @@ def judge(update, context):
       message.reply_to_message.reply_text(random.choice(fun.JUDGE_HANDLER))
     else:
       message.reply_text(fun.JUDGE_STRINGS)
+      
+      
+@run_async
+def alexa(update, context):
+    context.bot.sendChatAction(update.effective_chat.id, "typing") # Bot typing before send messages
+    message = update.effective_message
+    if message.reply_to_message:
+      message.reply_to_message.reply_text(random.choice(fun.ALEXA_HANDLER))
+    else:
+      message.reply_text(fun.ALEXA_STRINGS)
 
 
 @run_async
@@ -266,6 +276,7 @@ dispatcher.add_handler(PAT_HANDLER)
 dispatcher.add_handler(DECIDE_HANDLER)
 dispatcher.add_handler(JUDGE_HANDLER)
 dispatcher.add_handler(SLAP_HANDLER)
+dispatcher.add_handler(ALEXA_HANDLER)
 
 dispatcher.add_handler(TRUTH_HANDLER)
 dispatcher.add_handler(REPO_HANDLER)
