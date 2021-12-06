@@ -282,3 +282,14 @@ dispatcher.add_handler(ALEXA_HANDLER)
 dispatcher.add_handler(TRUTH_HANDLER)
 dispatcher.add_handler(REPO_HANDLER)
 dispatcher.add_handler(DARE_HANDLER)
+
+"__mod_name__ = "😂 ғᴜɴ"
+__command_list__ = [
+    "goodmorning", "goodnight", "repo", "judge", "decide", "slap", "insult", "truth", "dare", "alexa", "wish"
+]
+__handlers__ = [
+    GOODMORNING_HANDLER, GOODNIGHT_HANDLER, INSULT_HANDLER, ABUSE_HANDLER, GBAM_HANDLER, GBUN_HANDLER, PAT_HANDLER
+    DECIDE_HANDLER, JUDGE_HANDLER, SLAP_HANDLER, ALEXA_HANDLER, TRUTH_HANDLER, REPO_HANDLER, DARE_HANDLER,
+]"
+
+
