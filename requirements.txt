@@ -71,4 +71,5 @@ opencv-python-headless #imageedit
 countryinfo==0.1.2
 secureme #encrypt
 aiofiles
+aiohttp>=2.2.5
 wget
