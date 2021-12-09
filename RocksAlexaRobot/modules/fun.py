@@ -244,8 +244,8 @@ def pat(update: Update, context: CallbackContext):
         temp = random.choice(fun.PAT_TEMPLATES)
         reply = temp.format(user1=user1, user2=user2)
         reply_to.reply_text(reply, parse_mode=ParseMode.HTML)
-                                                                     
-            
+        
+        
  __help__ = """
  • `/repo`*:* get repo of Alexa bot
  • `/judge`*:* to judge someone argument
@@ -260,7 +260,6 @@ def pat(update: Update, context: CallbackContext):
  • `/gbun`*:* fack ban of users.
  """
 
-    
 GOODMORNING_HANDLER = DisableAbleMessageHandler(Filters.regex(r"(?i)(goodmorning|good morning)"), goodmorning, friendly="goodmorning")
 GOODNIGHT_HANDLER = DisableAbleMessageHandler(Filters.regex(r"(?i)(goodnight|good night)"), goodnight, friendly="goodnight")
 DECIDE_HANDLER = DisableAbleCommandHandler("decide", decide)
