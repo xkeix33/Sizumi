@@ -114,6 +114,7 @@ if ENV:
     TELEGRAPH_SHORT_NAME = os.environ.get("TELEGRAPH_SHORT_NAME", "Dr_Asad_Ali")
     HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
     LOG_GROUP_ID = os.environ.get('LOG_GROUP_ID', None)
+    REDIS_URL = os.environ.get('REDIS_URL', "redis-18814.c78.eu-west-1-2.ec2.cloud.redislabs.com:18814)
 
     try:
         BL_CHATS = set(int(x) for x in os.environ.get('BL_CHATS', "").split())
