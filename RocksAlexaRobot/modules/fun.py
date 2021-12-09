@@ -244,22 +244,8 @@ def pat(update: Update, context: CallbackContext):
         temp = random.choice(fun.PAT_TEMPLATES)
         reply = temp.format(user1=user1, user2=user2)
         reply_to.reply_text(reply, parse_mode=ParseMode.HTML)
-        
-        
- __help__ = """
- • `/repo`*:* get repo of Alexa bot
- • `/judge`*:* to judge someone argument
- • `/decide*:* get bot Decession on statement
- • `/insult`*:* to insult someone
- • `/slap`*:* to slap a user or bot
- • `/abuse`*:* to abuse someone
- • `/dare`*:* play truth and dare game with friends
- • `/truth`*:* play truth and dare game with friends
- • `/alexa`*:* to start alexa
- • `/pat`*:* to get pat
- • `/gbun`*:* fack ban of users.
- """
-
+       
+    
 GOODMORNING_HANDLER = DisableAbleMessageHandler(Filters.regex(r"(?i)(goodmorning|good morning)"), goodmorning, friendly="goodmorning")
 GOODNIGHT_HANDLER = DisableAbleMessageHandler(Filters.regex(r"(?i)(goodnight|good night)"), goodnight, friendly="goodnight")
 DECIDE_HANDLER = DisableAbleCommandHandler("decide", decide)
@@ -293,12 +279,3 @@ dispatcher.add_handler(ALEXA_HANDLER)
 dispatcher.add_handler(TRUTH_HANDLER)
 dispatcher.add_handler(REPO_HANDLER)
 dispatcher.add_handler(DARE_HANDLER)
-
-"__mod_name__ = "😂 ғᴜɴ"
-__command_list__ = [
-    "goodmorning", "goodnight", "repo", "judge", "decide", "slap", "insult", "truth", "dare", "alexa", "wish"
-]
-__handlers__ = [
-    GOODMORNING_HANDLER, GOODNIGHT_HANDLER, INSULT_HANDLER, ABUSE_HANDLER, GBAM_HANDLER, GBUN_HANDLER, PAT_HANDLER
-    DECIDE_HANDLER, JUDGE_HANDLER, SLAP_HANDLER, ALEXA_HANDLER, TRUTH_HANDLER, REPO_HANDLER, DARE_HANDLER
-]
