@@ -213,6 +213,8 @@ telethn = TelegramClient("KURUMIBOT", API_ID, API_HASH)
 pgram = Client("RocksAlexaRobot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 dispatcher = updater.dispatcher
 
+pbot = Client("RocksAlexaRobot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)
 WOLVES = list(WOLVES)
