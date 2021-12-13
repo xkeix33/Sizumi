@@ -48,6 +48,7 @@ pyrogram>=1.0.7
 datetime
 nltk
 aiohttp>=3.7.4
+asyncio
 pykeyboard==0.1.2
 Pillow>=4.2.0
 CurrencyConverter
