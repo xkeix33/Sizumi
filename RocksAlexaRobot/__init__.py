@@ -123,7 +123,7 @@ if ENV:
             "Your blacklisted chats list does not contain valid integers.")
 
 else:
-    from RocksAlexaRobot.config import Development as Config
+    from RocksAlexaRobot.sample_config import Development as Config
     TOKEN = Config.TOKEN
 
     try:
